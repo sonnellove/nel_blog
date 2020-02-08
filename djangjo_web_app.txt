@@ -1,0 +1,322 @@
+cd django_project
+python -m django --version
+$ python -m django --version
+$ django-admin
+$ django-admin startproject django_project
+$ python manage.py runserver
+$ python manage.py startapp blog
+git clean -fdx
+$ git remote add to origin https://github.com/sonnellove/nel_blog.git
+$ git push -u origin master
+ python manage.py collectstatic
+@09752320546Sql'
+https://www.w3schools.com/jquery/jquery_get_started.asp
+oauth2
+
+mysql
+desc blog_post_likes
+
+ NOTE: migrate first before create admin page!!!
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py makemigrations
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py migrate
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py createsuperuser
+===========
+$ python manage.py sqlmigrate blog 0001
+===========
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py makemigrations
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py sqlmigrate blog 0001
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py migrate
+
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>python manage.py shell
+>>> from blog.models import Post
+>>> from django.contrib.auth.models import User
+>>> User.objects.all
+<bound method BaseManager.all of <django.contrib.auth.models.UserManager object at 0x0000000003EC1E08>>
+>>> User.objects.all()
+>>> User.objects.first()
+>>> user = User.objects.filter(username='nelson').first()
+>>> user
+<User: nelson>
+>>> user.id
+1
+>>> user.pk
+1
+>>> user = User.objects.get(id=1)
+>>> Post.objects.all()
+<QuerySet []>
+>>> post_1 = Post(title='Blog 1', content='First Post Content!', author=user)
+>>> Post.objects.all()
+<QuerySet []>
+>>> post_1.save()
+>>> Post.objects.all()
+<QuerySet [<Post: Post object (1)>]>
+>>> exit()
+
+shell
+>>> from blog.models import Post
+>>> from django.contrib.auth.models import User
+>>> Post.objects.all()
+<QuerySet [<Post: Blog 1>]>
+>>> user = User.objects.filter(username='nelson').first()
+>>> user createsuperuser
+<User: nelson>
+>>> post_2 = Post(title='Blog 2', content='Secont Post Content', author_id=user.id)
+>>> post_2.save()
+>>> Post.objects.all()
+>>> post = Post.objects.first()
+>>> post.content
+'First Post Content!'
+>>> post.date_posted
+datetime.datetime(2020, 1, 8, 8, 57, 37, 80304, tzinfo=<UTC>)
+>>> post.author
+<User: nelson>
+>>> post.author.email
+'nelson@gmail.com'
+>>> user.post_set
+>>> user.post_set.create(title='Blo 3', content='Third Post Content!')
+<Post: Blo 3>
+>>> Post.objects.all()
+<QuerySet [<Post: Blog 1>, <Post: Blog 2>, <Post: Blo 3>]>
+
+
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\django_project>pip install django-crispy-forms
+
+
+picture
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.filter(username="sonnel").first()
+>>> user
+>>> user.profile
+<Profile: nelson Profile>
+>>> user.profile.image
+<ImageFieldFile: profile_pics/Jellyfish.jpg>
+>>> user.profile.image.width
+1024
+>>> user.profile.image.url
+'profile_pics/Jellyfish.jpg'
+>>> user = User.objects.filter(username="nelson").first()
+>>> user
+<User: nelson1>
+>>> user.profile.image
+<ImageFieldFile: profile_pics/Jellyfish_aETbOBQ.jpg>
+
+
+
+
+
+===========================================
+
+>>> import json
+>>> from blog.models import Post
+>>> with open('posts.json') as f:
+...     posts_json = json.load(f)
+...
+>>> for post in posts_json:
+...     post = Post(title=post['title'], content=post['content'], author_id=post['user_id'])
+...     post.save()
+>>> exit()
+
+
+>>> from django.core.paginator import Paginator
+>>> posts = ['1', '2', '3', '4', '5',]
+>>> p = Paginator(posts, 2)
+>>> p.num_pages
+3
+>>> p.count
+>>> p.page_range
+>>> for page in p.page_range:
+...     print(page)
+...
+1
+2
+3
+>>> p1 = p.page(1)
+>>> p1
+<Page 1 of 3>
+>>> p1.number
+1
+>>> p1.object_list
+['1', '2']
+>>> p1.has_previous()
+False
+>>> p1.has_next()
+True
+>>> p1.next_page_number()
+2
+>>>p1.has_other_pages()
+>>> exit()
+
+===========
+search to chrome "google app password"
+
+
+
+
+===============================
+Heroku
+
+C:\Users\Uno>heroku login
+Opening browser to https://cli-auth.heroku.com/auth/cli/browser/6f1b1c5b-1ef1-4071-9503-1afadf09947b
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\original>pip install gunicorn
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\original>pip freeze
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\original>pip freeze > requirements.txt
+C:\Users\Uno\Desktop\toturial_2019\toturial django 2020\Python django web app\original>git init
+Uno@Uno-PC MINGW64 ~/Desktop/toturial_2019/toturial django 2020/Python django web app/original
+$ git init
+
+copy the gitignore https://github.com/github/gitignore/blob/master/Python.gitignore
+
+$ git add -A
+$ git status
+$ git commit -m "Initial Commit"
+$ heroku create myawesomefirstapp
+
+gincopy kolang https://myawesomefirstapp.herokuapp.com/ | https://git.heroku.com/myawesomefirstapp.git
+
+$ heroku open
+$ git push heroku master
+
+NOTE: Push rejected to myawesomefirstapp. because of this "Push rejected to myawesomefirstapp."
+
+$ git status
+$ git add -A
+$ git commit -m "Updated STATIC_ROOT"
+
+$ git push heroku master
+$ heroku open
+$ heroku logs --tail
+
+$ git status
+$ git add -A
+$ git commit -m "Added Profile"
+$ git push heroku master
+
+$ python
+>>> import secrets
+>>> secrets.token_hex(24)
+'c4278bbaccd98e41c632ae9a0c4d3936c1a4b148bfa53d80'
+
+
+
+
+
+
+$ heroku pg
+$ pip install django-heroku
+$ git status
+$ git add -A
+$ git commit -m "Added django-heroku"
+$ git push heroku master
+$ heroku run python manage.py migrate
+$ heroku run bash
+~ $ python manage.py createsuperuser
+
+===============================================
+>>> from blog.models import Post
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.get(username='sonnel');
+>>> user
+<User: sonnel>
+>>> user = User.objects.get(id=1);
+>>> user
+>>> p = Post(title='my new post', slug='my new post', author=user, body='content')
+>>> p.save()
+>>> Post.objects.create(title='my new post 1', slug='my new post 1', author=user, body='content')
+
+>>> Post.objects.all()
+>>> Post.objects
+>>> for l in Post.objects.all():
+...     print(l.id)
+...
+1
+2
+3
+>>>
+>>> for l in Post.objects.all():
+    print(l.id)
+    print(l.title)
+    print(l.author)
+    print(l.status)
+...
+1
+one men
+sonnel
+draft
+2
+my new post
+sonnel
+draft
+3
+my new post 1
+sonnel
+draft
+>>>
+>>> Post.objects.filter(status='draft')
+<QuerySet [<Post: one men>, <Post: my new post>, <Post: my new post 1>]>
+>>> Post.objects.filter(title__startswith='my')
+<QuerySet [<Post: my new post>, <Post: my new post 1>]>
+>>> Post.objects.filter(title__endswith='my')
+<QuerySet []>
+>>> Post.objects.filter(title__contains='my')
+<QuerySet [<Post: my new post>, <Post: my new post 1>]>
+>>> Post.objects.order_by('title')
+<QuerySet [<Post: my new post>, <Post: my new post 1>, <Post: one men>]>
+
+>>> from django.utils import timezone
+>>> print(timezone.now())
+2020-02-03 05:14:16.379006+00:00
+>>> timezone.now() - timezone.timedelta(hours=1)
+datetime.datetime(2020, 2, 3, 4, 15, 4, 886558, tzinfo=<UTC>)
+>>> print(timezone.now() - timezone.timedelta(hours=2)
+...
+... )
+2020-02-03 03:16:01.843767+00:00
+>>> Post.objects.filter(created_Itemtimezone.now() - timezone.timedelta(hours=1), status='published')
+
+mysql
+use mysite;
+show tables;
+select * from blog_post
+select * from auth_user;
+
+$ pip install faker
+>>> from faker import Faker
+>>> from faker import Faker
+>>> faker=Faker()
+>>> faker.name()
+>>> for _ in range(10):
+...     print(faker.name())
+...
+
+>>> from django.contrib.auth.models import User
+>>> user  = User.objects.create_user(username = 'jhon', email='john@gmail.com', password='@Fernandez')
+>>> user
+<User: jhon>
+==================================================
+<a href="{% url 'blog:post_detail' p.id p.slug %}">{{ p.title }}</a><small
+                        style="float:right">{{ p.created }}</small><br>
+
+==================================================
+ # published = models.Manager()
+>>> from blog.models import Post
+>>> Post.published.all()
+
+#Our custom Model Manager
+>>> from blog.models import Post
+>>> Post.objects.all()
+>>> Post.published.all()
+    {% for p in posts.paginator.page_range %}
+
+$ pip install social-auth-app-django
+
+
+
+=======================================
+mkvirtualenv --python=/usr/bin/python3.7 blog_venv
+$ pip freeze > requirements.txt
+
+
+
+
+
+
